@@ -12,6 +12,7 @@ export class CreateArticlePage {
       'What\'s this article about?');
     this.articleText = page.getByPlaceholder('Write your article (in');
     this.articleTags = page.getByPlaceholder('Enter tags');
+    this.title = page.locator('h1');
   }
 
   async clickPublishArticleButton() {
@@ -50,4 +51,8 @@ export class CreateArticlePage {
     await this.page.keyboard.press('Enter');
     });
   }
-}
+  async assertArticleIsAdded(text) {
+    await test.step(`Assert article heading is shown`, async () => {
+      await expect(this.title).toContainText(text);
+    });
+}}

@@ -33,6 +33,7 @@ test('Creat an article without required fields', async () => {
   await createArticlePage.fillArticleDescription(text);
   await createArticlePage.fillArticleText(text);
   await createArticlePage.clickPublishArticleButton();
+  await createArticlePage.assertArticleIsAdded(text);
   
 });
 

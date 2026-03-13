@@ -1,4 +1,4 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { SignUpPage } from '../../src/pages/SignUpPage';
 import { HomePage } from '../../src/pages/HomePage';
 import { CreateArticlePage } from '../../src/pages/CreateArticlePage';
@@ -35,5 +35,6 @@ test('Creat an article without required fields', async () => {
   await createArticlePage.fillArticleTags(text);
   await createArticlePage.pressEnter();
   await createArticlePage.clickPublishArticleButton();
+  await createArticlePage.assertArticleIsAdded(text);
 });
 
