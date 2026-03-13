@@ -27,27 +27,27 @@ export class CreateArticlePage {
     });
   }
   async fillArticleTitle(text){
-    await test.step(`fillArticleTitle`, async () => {
+    await test.step(`fill Article Title`, async () => {
     await this.articleTitle.fill(text);
    });
   }
   async fillArticleDescription(text){
-    await test.step(`fillArticleDescription`, async () => {
+    await test.step(`fill Article Description`, async () => {
     await this.articleDescription.fill(text);
     });
   }
   async fillArticleText(text){
-    await test.step(`fillArticleText`, async () => {
+    await test.step(`fill Article Text`, async () => {
     await this.articleText.fill(text);
     });
   }
   async fillArticleTags(text){
-    await test.step(`fillArticleTags`, async () => {
+    await test.step(`fill Article Tags`, async () => {
     await this.articleTags.fill(text);
     });
   }
   async pressEnter(){
-    await test.step(`pressEnter`, async () => {
+    await test.step(`press Enter`, async () => {
     await this.page.keyboard.press('Enter');
     });
   }
